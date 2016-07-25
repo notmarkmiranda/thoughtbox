@@ -9,6 +9,8 @@ class LinksController < ApplicationController
       flash[:success] = "Submitted \"#{@link.title}\"!"
       redirect_to links_path
     else
+      flash[:warning] = "The world is dying!"
+      render :index
     end
   end
 
