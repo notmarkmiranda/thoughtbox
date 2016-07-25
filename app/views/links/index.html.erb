@@ -1,3 +1,6 @@
+<div class="container">
+
+
 <% if current_user %>
 <%= form_for(Link.new) do |f| %>
   <%= f.label :title, "Title" %>
@@ -10,25 +13,31 @@
 
 <div class="links">
   <% if @links %>
-  <% @links.each do |link| %>
-    <div class="link-#{link.id}">
-      <%= link_to link.title, link.link %> - read:
-      <% if link.read %>
-        <%= content_tag :span, class: "link-read" do %>
+    <% @links.each do |link| %>
+      <div class="link-#{link.id}">
+
+        <%= link_to link.title, link.link %>
+
+        - read:
+        <% if link.read %>
+          <%= content_tag :span, class: "link-read" do %>
+          <% end %>
+          -
+          <%= link_to '#', class: "read", data: {id: link.id} do %>
+            <%= content_tag :span %>
+          <% end %>
+        <% else %>
+          <%= content_tag :span, class: "link-unread" do %>
+          <% end %>
+          -
+          <%= link_to '#', class: "unread", data: {id: link.id} do %>
+            <%= content_tag :span %>
+          <% end %>
         <% end %>
-        -
-        <%= link_to '#', class: "read", data: {id: link.id} do %>
-          <%= content_tag :span %>
-        <% end %>
-      <% else %>
-        <%= content_tag :span, class: "link-unread" do %>
-        <% end %>
-        -
-        <%= link_to '#', class: "unread", data: {id: link.id} do %>
-          <%= content_tag :span %>
-        <% end %>
-      <% end %>
-    </div>
+
+        - <%= link_to "edit", edit_link_path(link.id) %>
+      </div>
+    <% end %>
   <% end %>
-  <% end %>
+</div>
 </div>
