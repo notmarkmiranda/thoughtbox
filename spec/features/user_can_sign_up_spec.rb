@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.feature "User can sign up for an account" do
   scenario "from the root path" do
     visit "/"
-    expect(page).to have_content "Log In or Sign Up"
+    expect(page).to have_link "Log In"
+    expect(page).to have_link "Sign Up"
 
     click_link "Sign Up!"
 

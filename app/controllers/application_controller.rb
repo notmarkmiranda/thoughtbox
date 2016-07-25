@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
   def current_user
     @user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
+  def require_user
+    redirect_to login_path unless current_user
+  end
+
+  def redirect_user
+    redirect_to links_path if current_user
+  end
 end

@@ -1,59 +1,74 @@
 <div class="container">
+<div class="row">
+  <div class="col-md-3 sidebar">
+    <section class="new">
 
+    <h4>New thoughts</h4>
+    <%= form_for(Link.new) do |f| %>
+    <div class="form-group">
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :link, "Link" %>
+      <%= f.text_field :link, placeholder: "Link", class: "form-control" %>
+    </div>
+    <%= f.submit "GO!", class: "btn btn-success btn-block" %>
+    <% end %>
+    </section>
 
-<% if current_user %>
-<%= form_for(Link.new) do |f| %>
-  <%= f.label :title, "Title" %>
-  <%= f.text_field :title, placeholder: "Title" %>
-  <%= f.label :link, "Link" %>
-  <%= f.text_field :link, placeholder: "Link" %>
-  <%= f.submit "GO!" %>
-<% end %>
-<% end %>
+    <section class="sorting">
+      <h4>Sort thoughts</h4>
 
-<section class="sorting">
-  <div>
-    search: <input type="text" id="search-box">
+      <div>
+        search:
+        <input type="text" id="search-box" class="form-control">
+      </div>
+
+      <div>
+        see by status:
+        <div>
+          <button type="button" class="btn btn-success" id="filter-read">read</button>
+          <button type="button" class="btn btn-danger" id="filter-unread">unread</button>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" class="btn btn-warning" id="alphabetically">Sort Alphabetically!</button>
+      </div>
+    </section>
   </div>
+  <div class="col-md-9 main-area">
 
-  <div>
-    see by status:
-    <button type="button" class="btn btn-success" id="filter-read">read</button>
-    <button type="button" class="btn btn-danger" id="filter-unread">unread</button>
-  </div>
-
-  <div>
-    <button type="button" class="btn btn-warning" id="alphabetically">Sort Alphabetically!</button>
-  </div>
-</section>
-
-<div class="links">
-  <% if @links %>
-    <% @links.each do |link| %>
-      <div class="link link-<%= link.id %> read-<%= link.read %>" data-search-term="<%= link.title %>">
-
+    <div class="links">
+      <% if @links %>
+      <% @links.each do |link| %>
+        <div class="link link-<%= link.id %> read-<%= link.read %>" data-search-term="<%= link.title %>">
+        #<%= link.id %>
         <%= link_to link.title, link.link %>
 
-        - read:
+        <br />read:
         <% if link.read %>
-          <%= content_tag :span, class: "link-read" do %>
-          <% end %>
-          -
-          <%= link_to '#', class: "read", data: {id: link.id} do %>
-            <%= content_tag :span %>
-          <% end %>
+        <%= content_tag :span, class: "link-read" do %>
+        <% end %>
+        -
+        <%= link_to '#', class: "read", data: {id: link.id} do %>
+        <%= content_tag :span %>
+        <% end %>
         <% else %>
-          <%= content_tag :span, class: "link-unread" do %>
-          <% end %>
-          -
-          <%= link_to '#', class: "unread", data: {id: link.id} do %>
-            <%= content_tag :span %>
-          <% end %>
+        <%= content_tag :span, class: "link-unread" do %>
+        <% end %>
+        -
+        <%= link_to '#', class: "unread", data: {id: link.id} do %>
+        <%= content_tag :span %>
+        <% end %>
         <% end %>
 
         - <%= link_to "edit", edit_link_path(link.id) %>
       </div>
-    <% end %>
-  <% end %>
-</div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+  </div>
 </div>

@@ -20,3 +20,22 @@ body {
 .red {
   color: red;
 }
+
+.sorting {
+  padding-top: 50px;
+  & > div {
+    padding: 15px;
+  }
+}
+
+.links {
+  text-align: left;
+}
+
+.link {
+  padding-bottom: 15px;
+}
+
+.sidebar {
+  background-color: pink;
+}
