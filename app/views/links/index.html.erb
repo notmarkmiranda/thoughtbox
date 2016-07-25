@@ -11,10 +11,26 @@
 <% end %>
 <% end %>
 
+<section class="sorting">
+  <div>
+    search: <input type="text" id="search-term">
+  </div>
+
+  <div>
+    see by status:
+    <button type="button" class="btn btn-success" id="filter-read">read</button>
+    <button type="button" class="btn btn-danger" id="filter-unread">unread</button>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-warning" id="alphabetically">Sort Alphabetically!</button>
+  </div>
+</section>
+
 <div class="links">
   <% if @links %>
     <% @links.each do |link| %>
-      <div class="link-#{link.id}">
+      <div class="link link-<%= link.id %> read-<%= link.read %>">
 
         <%= link_to link.title, link.link %>
 
