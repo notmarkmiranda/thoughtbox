@@ -1,9 +1,13 @@
+body {
+  font-family: "Comic Sans MS" !important;
+}
+
 .read > span:before {
-  content: "Mark as unread"
+  content: "mark as unread"
 }
 
 .unread > span:before {
-  content: "Mark as read"
+  content: "mark as read"
 }
 
 .link-read:before {

@@ -14,6 +14,21 @@ class LinksController < ApplicationController
     end
   end
 
+  def edit
+    @link = Link.find(params[:id])
+  end
+
+  def update
+    @link = Link.find(params[:id])
+    if @link.update(link_params)
+      flash[:success] = "edited, yup!"
+      redirect_to root_path
+    else
+      flash[:warning] = "not edited, you forgot something"
+      render :edit
+    end
+  end
+
   private
 
   def link_params
