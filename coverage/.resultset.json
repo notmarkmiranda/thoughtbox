@@ -31,6 +31,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/Users/notmarkmiranda/turing/4module/projects/thoughtbox/app/controllers/sessions_controller.rb": [
@@ -86,8 +87,16 @@
         3,
         null,
         null
+      ],
+      "/Users/notmarkmiranda/turing/4module/projects/thoughtbox/app/models/link.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1469463612
+    "timestamp": 1469465007
   }
 }

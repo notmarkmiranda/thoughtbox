@@ -99,3 +99,12 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+def user_create_and_login
+  user = User.create(email: "notmarkmiranda@gmail.com",
+                     password: "password")
+  visit "/login"
+  fill_in "E-Mail", with: user.email
+  fill_in "Password", with: "password"
+  click_button "Log In!"
+end
