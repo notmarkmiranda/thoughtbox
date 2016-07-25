@@ -10,9 +10,24 @@
 
 <div class="links">
   <% if @links %>
-  <% @links.each_with_index do |link, index| %>
-    <div class="link-#{index}">
-      <%= link_to link.title, link.link %> - Read: <%= link.read %>
+  <% @links.each do |link| %>
+    <div class="link-#{link.id}">
+      <%= link_to link.title, link.link %> - read:
+      <% if link.read %>
+        <%= content_tag :span, class: "link-read" do %>
+        <% end %>
+        -
+        <%= link_to '#', class: "read", data: {id: link.id} do %>
+          <%= content_tag :span %>
+        <% end %>
+      <% else %>
+        <%= content_tag :span, class: "link-unread" do %>
+        <% end %>
+        -
+        <%= link_to '#', class: "unread", data: {id: link.id} do %>
+          <%= content_tag :span %>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
   <% end %>

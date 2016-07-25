@@ -60,7 +60,7 @@
       "/Users/notmarkmiranda/turing/4module/projects/thoughtbox/app/controllers/links_controller.rb": [
         1,
         1,
-        7,
+        8,
         null,
         null,
         1,
@@ -113,8 +113,27 @@
         3,
         null,
         null
+      ],
+      "/Users/notmarkmiranda/turing/4module/projects/thoughtbox/app/controllers/api/v1/base_controller.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/notmarkmiranda/turing/4module/projects/thoughtbox/app/controllers/api/v1/links_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1469467279
+    "timestamp": 1469474680
   }
 }
