@@ -1,0 +1,17 @@
+<% if current_user %>
+<%= form_for(Link.new) do |f| %>
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title, placeholder: "Title" %>
+  <%= f.label :link, "Link" %>
+  <%= f.text_field :link, placeholder: "Link" %>
+  <%= f.submit "GO!" %>
+<% end %>
+<% end %>
+
+<div class="links">
+  <%= @links.each_with_index do |link, index| %>
+    <div class="link-#{index}">
+      <%= link_to link.title, link.link %> - Read: <%= link.read %>
+    </div>
+  <% end %>
+</div>
