@@ -1,0 +1,18 @@
+.read > span:before {
+  content: "Mark as unread"
+}
+
+.unread > span:before {
+  content: "Mark as read"
+}
+
+.link-read:before {
+  content: "true";
+}
+.link-unread:before {
+  content: "false";
+}
+
+.red {
+  color: red;
+}

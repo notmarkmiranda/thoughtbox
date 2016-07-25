@@ -18,7 +18,6 @@ RSpec.feature "User can submit link" do
     expect(page).to have_content "Submitted \"#{title}\"!"
     within (".links") do
       expect(page).to have_link(title, href: url)
-      expect(page).to have_content("Read: false")
     end
   end
 end
