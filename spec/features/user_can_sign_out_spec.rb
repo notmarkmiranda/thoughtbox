@@ -2,12 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "User can sign out" do
   before do
-    user = User.create(email: "notmarkmiranda@gmail.com",
-                       password: "password")
-    visit "/login"
-    fill_in "E-Mail", with: user.email
-    fill_in "Password", with: "password"
-    click_button "Log In!"
+    user_create_and_login
   end
 
   scenario "and is redirected to login page" do
