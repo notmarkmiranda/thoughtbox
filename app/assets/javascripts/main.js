@@ -1,4 +1,4 @@
-$(() => {
+$(document).ready(function() {
 
   $('.read, .unread').click(function(){
     var $this = $(this);
