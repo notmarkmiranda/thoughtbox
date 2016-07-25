@@ -1,7 +1,17 @@
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :email, "E-Mail" %>
-  <%= f.text_field :email, placeholder: "E-Mail" %>
-  <%= f.label :password, "Password" %>
-  <%= f.password_field :password %>
-  <%= f.submit "Log In!" %>
-<% end %>
+<div class="container">
+  <div class="col-md-4 col-md-offset-4">
+    <h1>GET LOGGED IN!</h1>
+    <%= form_for(:session, url: login_path) do |f| %>
+    <div class="form-group">
+      <%= f.label :email, "E-Mail" %>
+      <%= f.text_field :email, placeholder: "E-Mail", class: "form-control" %>
+    </div>
+    <div class="form-group">
+    <%= f.label :password, "Password" %>
+    <%= f.password_field :password, class: "form-control", placeholder: "password" %>
+  </div>
+    <%= f.submit "Log In!", class: "btn btn-primary btn-lg btn-block" %>
+    <% end %>
+
+  </div>
+</div>

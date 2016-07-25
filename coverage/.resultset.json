@@ -12,6 +12,7 @@
       "/Users/notmarkmiranda/turing/4module/projects/thoughtbox/app/controllers/pages_controller.rb": [
         1,
         1,
+        1,
         null,
         null
       ],
@@ -23,8 +24,24 @@
         1,
         null,
         1,
-        23,
+        24,
         null,
+        null,
+        1,
+        9,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/notmarkmiranda/turing/4module/projects/thoughtbox/app/models/link.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/notmarkmiranda/turing/4module/projects/thoughtbox/app/models/user.rb": [
@@ -60,7 +77,9 @@
       "/Users/notmarkmiranda/turing/4module/projects/thoughtbox/app/controllers/links_controller.rb": [
         1,
         1,
-        8,
+        null,
+        1,
+        7,
         null,
         null,
         1,
@@ -94,14 +113,6 @@
         1,
         1,
         null,
-        null
-      ],
-      "/Users/notmarkmiranda/turing/4module/projects/thoughtbox/app/models/link.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
         null
       ],
       "/Users/notmarkmiranda/turing/4module/projects/thoughtbox/app/controllers/users_controller.rb": [
@@ -149,6 +160,6 @@
         0
       ]
     },
-    "timestamp": 1469481157
+    "timestamp": 1469483474
   }
 }
