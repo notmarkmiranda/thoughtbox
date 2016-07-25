@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('.read, .unread').click(changeStatus)
   $('#filter-read').click(filterRead)
   $('#filter-unread').click(filterUnread)
-  
+
   $('#alphabetically').click(function(){
     var sorted = sortAlphabetically();
     $('.links .link').remove();
@@ -10,7 +10,19 @@ $(document).ready(function() {
       $('.links').append(sorted[i])
     }
   });
+  $('#search-box').on('keyup', searchBox);
 });
+
+function searchBox(){
+  var searchTerm = $(this).val().toLowerCase();
+  $('.links div').each(function(){
+    if($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1){
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+}
 
 function sortAlphabetically(){
   var sorted = $('.links .link').sort(function(current, next){

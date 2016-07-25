@@ -13,7 +13,7 @@
 
 <section class="sorting">
   <div>
-    search: <input type="text" id="search-term">
+    search: <input type="text" id="search-box">
   </div>
 
   <div>
@@ -30,7 +30,7 @@
 <div class="links">
   <% if @links %>
     <% @links.each do |link| %>
-      <div class="link link-<%= link.id %> read-<%= link.read %>">
+      <div class="link link-<%= link.id %> read-<%= link.read %>" data-search-term="<%= link.title %>">
 
         <%= link_to link.title, link.link %>
 
