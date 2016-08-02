@@ -2,7 +2,10 @@ class Api::V1::LinksController < Api::V1::BaseController
   respond_to :json
 
   def update
-    respond_with Link.find(params[:id]).update(link_params)
+    @link = Link.find(params[:id])
+    if @link.update(link_params)
+	respond_with @link
+    end
   end
 
   private

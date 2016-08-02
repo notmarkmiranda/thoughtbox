@@ -8,10 +8,11 @@
 </head>
 <body>
 <%= render partial: "shared/navbar" %>
-
-<% flash.each do |type, message| %>
-  <%= content_tag :div, message, class: "alert alert-#{type}" %>
-<% end %>
+<div class="container">
+  <% flash.each do |type, message| %>
+    <%= content_tag :div, message, class: "alert alert-#{type}" %>
+  <% end %>
+</div>
 
 <%= yield %>
 
