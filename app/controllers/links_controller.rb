@@ -2,7 +2,7 @@ class LinksController < ApplicationController
   before_action :require_user
 
   def index
-    @links = current_user.links.all
+    @links = current_user.links
   end
 
   def create
